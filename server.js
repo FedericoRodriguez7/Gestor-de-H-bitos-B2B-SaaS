@@ -4,6 +4,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 
 import authRoutes from "./routes/auth.js";
+import habitosRoutes from "./routes/habitos.js";
 
 dotenv.config();
 
@@ -13,6 +14,7 @@ app.use(express.json());
 
 // Rutas
 app.use("/api/auth", authRoutes);
+app.use("/api/habitos", habitosRoutes);
 
 mongoose.connect(process.env.MONGO_URI)
   .then(() => {
